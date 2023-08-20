@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 class OnboardingSwipe extends StatelessWidget {
-  const OnboardingSwipe({
+ const OnboardingSwipe({
     Key? key,
     required this.image,
     required this.text1,
     required this.text2,
+    required this.onNextPressed,
   }) : super(key: key);
 
   final dynamic image;
   final String text1;
   final String text2;
+  final VoidCallback onNextPressed;
   final TextStyle style = const TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: 24,
@@ -42,23 +44,39 @@ class OnboardingSwipe extends StatelessWidget {
             ),
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 5),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "Skip",
-                    style: TextStyle(color: Color(0xff2F3132)),
-                  )),
-              TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "Next",
-                    style: TextStyle(color: Color(0xffB00005)),
-                  )),
-            ],
+          SpaceBetween(
+            left: TextButton(
+                onPressed: () {},
+                child: const Text(
+                  "Skip",
+                  style: TextStyle(color: Color(0xff2F3132)),
+                )),
+            right: TextButton(
+                onPressed: onNextPressed,
+                child: const Text(
+                  "Next",
+                  style: TextStyle(color: Color(0xffB00005)),
+                )),
           )
         ]);
+  }
+}
+
+class SpaceBetween extends StatelessWidget {
+  const SpaceBetween({
+    super.key,
+    required this.left,
+    required this.right,
+  });
+
+  final Widget left;
+  final Widget right;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [left, right],
+    );
   }
 }

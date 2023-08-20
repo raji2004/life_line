@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:life_line/screens/screens.dart';
 
+
+
 void main() {
   runApp(const MyApp());
 }
@@ -38,7 +40,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   final TextStyle textStyle = const TextStyle(
     color: Color.fromRGBO(15, 71, 117, 1),
     fontWeight: FontWeight.w700,
@@ -46,17 +47,15 @@ class _MyHomePageState extends State<MyHomePage> {
   );
 
   @override
-void initState() {
+  void initState() {
     super.initState();
-    Timer(
-      const  Duration(seconds: 3),
-            () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) =>  NextPage()),
-              );
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) =>  NextPage()),
+      );
     });
-}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,5 +83,3 @@ void initState() {
     );
   }
 }
-
-
