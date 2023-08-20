@@ -1,0 +1,1 @@
+export 'package:life_line/widget/onboarding_swipe.dart';
