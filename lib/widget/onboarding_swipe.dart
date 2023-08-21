@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
 class OnboardingSwipe extends StatelessWidget {
- const OnboardingSwipe({
+  const OnboardingSwipe({
     Key? key,
     required this.image,
     required this.text1,
     required this.text2,
     required this.onNextPressed,
+    required this.onSkipPressed,
   }) : super(key: key);
 
   final dynamic image;
   final String text1;
   final String text2;
   final VoidCallback onNextPressed;
+  final VoidCallback onSkipPressed;
   final TextStyle style = const TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: 24,
@@ -46,7 +48,7 @@ class OnboardingSwipe extends StatelessWidget {
           SizedBox(height: MediaQuery.of(context).size.height / 5),
           SpaceBetween(
             left: TextButton(
-                onPressed: () {},
+                onPressed: onSkipPressed,
                 child: const Text(
                   "Skip",
                   style: TextStyle(color: Color(0xff2F3132)),

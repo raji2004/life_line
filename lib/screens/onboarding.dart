@@ -3,9 +3,8 @@ import 'package:life_line/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
 
-
-class NextPage extends StatelessWidget {
-  NextPage({super.key});
+class OnboardingPage extends StatelessWidget {
+  OnboardingPage({super.key});
   final List<Map> img = [
     {
       "image": ClipRRect(
@@ -32,7 +31,7 @@ class NextPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  
+    var isLast = false;
     var controller = SwiperController();
     return SafeArea(
       child: Scaffold(
@@ -40,7 +39,7 @@ class NextPage extends StatelessWidget {
         controller: controller,
         pagination: const SwiperPagination(),
         index: 0,
-        onIndexChanged:(value) => print(value),
+        onIndexChanged: (value) => value == 2 ? isLast = true : isLast = false,
         itemBuilder: (BuildContext context, int index) {
           return OnboardingSwipe(
             image: img[index]['image'],
@@ -48,8 +47,19 @@ class NextPage extends StatelessWidget {
             text2: img[index]['text2'],
             onNextPressed: () {
               // Increment index on Next button press
-              controller.next();
+              isLast
+                  ? Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Placeholder()),
+                    )
+                  : controller.next();
             },
+            onSkipPressed:()=> Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Placeholder()),
+                    ) ,
           );
         },
         viewportFraction: 1,
