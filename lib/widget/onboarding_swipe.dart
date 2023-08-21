@@ -11,7 +11,7 @@ class OnboardingSwipe extends StatelessWidget {
   }) : super(key: key);
 
   final dynamic image;
-  final String text1;
+  final dynamic text1;
   final String text2;
   final VoidCallback onNextPressed;
   final VoidCallback onSkipPressed;
@@ -28,12 +28,18 @@ class OnboardingSwipe extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Text(
-            text1,
-            style: style,
+          Padding(
+            padding: const EdgeInsets.only(left:25.0),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                text1,
+                style: style,
+              ),
+            ),
           ),
           const SizedBox(
-            height: 20,
+            height: 5,
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 25),

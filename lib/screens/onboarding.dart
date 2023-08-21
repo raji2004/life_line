@@ -52,7 +52,7 @@ class OnboardingPage extends StatelessWidget {
                   ? Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const Placeholder()),
+                          builder: (context) => const SigninOption()),
                     )
                   : controller.next();
             },
