@@ -2,6 +2,7 @@
 import 'package:life_line/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
+import 'package:life_line/screens/signin_options.dart';
 
 class OnboardingPage extends StatelessWidget {
   OnboardingPage({super.key});
@@ -55,11 +56,10 @@ class OnboardingPage extends StatelessWidget {
                     )
                   : controller.next();
             },
-            onSkipPressed:()=> Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const Placeholder()),
-                    ) ,
+            onSkipPressed: () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const SigninOption()),
+            ),
           );
         },
         viewportFraction: 1,
