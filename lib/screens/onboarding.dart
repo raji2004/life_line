@@ -34,38 +34,35 @@ class OnboardingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var isLast = false;
     var controller = SwiperController();
-    return SafeArea(
-      child: Scaffold(
-          body: Swiper(
-        controller: controller,
-        pagination: const SwiperPagination(),
-        index: 0,
-        onIndexChanged: (value) => value == 2 ? isLast = true : isLast = false,
-        itemBuilder: (BuildContext context, int index) {
-          return OnboardingSwipe(
-            image: img[index]['image'],
-            text1: img[index]['text1'],
-            text2: img[index]['text2'],
-            onNextPressed: () {
-              // Increment index on Next button press
-              isLast
-                  ? Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SigninOption()),
-                    )
-                  : controller.next();
-            },
-            onSkipPressed: () => Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => const SigninOption()),
-            ),
-          );
-        },
-        viewportFraction: 1,
-        scale: 1,
-        itemCount: img.length,
-      )),
-    );
+    return Scaffold(
+        body: Swiper(
+      controller: controller,
+      pagination: const SwiperPagination(),
+      index: 0,
+      onIndexChanged: (value) => value == 2 ? isLast = true : isLast = false,
+      itemBuilder: (BuildContext context, int index) {
+        return OnboardingSwipe(
+          image: img[index]['image'],
+          text1: img[index]['text1'],
+          text2: img[index]['text2'],
+          onNextPressed: () {
+            // Increment index on Next button press
+            isLast
+                ? Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SigninOption()),
+                  )
+                : controller.next();
+          },
+          onSkipPressed: () => Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const SigninOption()),
+          ),
+        );
+      },
+      viewportFraction: 1,
+      scale: 1,
+      itemCount: img.length,
+    ));
   }
 }

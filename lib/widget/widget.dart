@@ -4,3 +4,4 @@ export 'package:life_line/widget/button.dart';
 export 'package:life_line/widget/rectangle.dart';
 export 'package:life_line/widget/my_app_bar.dart';
 export 'package:life_line/widget/text.dart';
+export 'package:life_line/widget/input_box.dart';

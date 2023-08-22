@@ -4,7 +4,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({
     super.key,
     this.image = const AssetImage('assets/bg.png'),
-    this.scaleY = 1.7,
+    this.scaleY = 1.9,
     this.paddingBottom=30,
     this.paddingRight=0
   });
@@ -29,8 +29,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           fit: BoxFit.fill,
         ),
       ),
-      leading: Padding(
-        padding:  EdgeInsets.only(bottom: paddingBottom, right: paddingRight),
+      leading:  Padding(
+        padding:  EdgeInsets.only(bottom: paddingBottom),
         child: BackButton(
           onPressed: () {
             Navigator.pop(context);
