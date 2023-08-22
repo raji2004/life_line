@@ -6,10 +6,11 @@ class SigninOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screen = MediaQuery.of(context).size;
-    return Scaffold(
-      backgroundColor: const Color(0xffF4E5E5),
-      body: LowerCard(screen: screen),
+    return const Scaffold(
+      backgroundColor: Color(0xffF4E5E5),
+      body: LowerCard(
+        child: BottomContent(),
+      ),
     );
   }
 }

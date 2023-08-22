@@ -4,13 +4,14 @@ import 'package:life_line/widget/widget.dart';
 class LowerCard extends StatelessWidget {
   const LowerCard({
     super.key,
-    required this.screen,
+    required this.child,
   });
 
-  final Size screen;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
+    final screen = MediaQuery.of(context).size;
     return Align(
       alignment: Alignment.bottomCenter,
       child: ClipRRect(
@@ -19,44 +20,51 @@ class LowerCard extends StatelessWidget {
           height: screen.height / 2,
           width: screen.width,
           color: const Color(0xFFFFFFFF),
-          child:  Column(
-            children: [
-              const SizedBox(
-                height: 10,
-              ),
-             const Rectangle(),
-             const SizedBox(
-                height: 25,
-              ),
-            const  Button(text: "Sign Up"),
-             const SizedBox(
-                height: 10,
-              ),
-             const Button(
-                backgroundColor: Color(0xFFFFFFFF),
-                text: "Log In",
-                textColor: Color(0xFF000000),
-                borderWidth: 1,
-              ),
-             const LineWithText(),
-             ButtonWithIcon(
-                icon: Image.asset('assets/apple.png'),
-                text: "Continue with Apple",
-              ),
-          const SizedBox(height: 10),
-              ButtonWithIcon(
-                icon:Image.asset('assets/google.png') ,
-                text: "Continue with Google",
-              ),
-            const  SizedBox(height: 10),
-              ButtonWithIcon(
-                icon: Image.asset('assets/facebook.png'),
-                text: "Continue with Facebook",
-              )
-            ],
-          ),
+          child: child,
         ),
       ),
+    );
+  }
+}
+
+class BottomContent extends StatelessWidget {
+  const BottomContent({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const SizedBox(height: 10),
+        const Rectangle(),
+        const SizedBox(height: 25),
+        Button.signup(context),
+        const SizedBox(height: 10),
+        Button.login(context),
+        const LineWithText(),
+        ButtonWithIcon(
+          icon: Image.asset('assets/apple.png'),
+          text: "Continue with Apple",
+        ),
+        const SizedBox(height: 10),
+        ButtonWithIcon(
+          icon: Padding(
+            padding: const EdgeInsets.only(left: 3),
+            child: Image.asset('assets/google.png')),
+          text: "Continue with Google",
+        ),
+        const SizedBox(height: 10),
+        ButtonWithIcon(
+          icon: Padding(
+            padding: const EdgeInsets.only(left: 20.0),
+            child: Image.asset('assets/facebook.png'),
+          ),
+          text: "Continue with Facebook",
+          horizontal: 82,
+          backgroundColor: Colors.transparent,
+        )
+      ],
     );
   }
 }
@@ -75,7 +83,7 @@ class LineWithText extends StatelessWidget {
         children: [
           Rectangle(width: 150, height: 1),
           SizedBox(width: 10),
-          Text("or", style: TextStyle(fontSize: 20)),
+          MyText("or", fontSize: 20),
           SizedBox(
             width: 10,
           ),

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:life_line/screens/screens.dart';
+import 'package:life_line/widget/widget.dart';
 
 class Button extends StatelessWidget {
   const Button({
     super.key,
     required this.text,
+    required this.onPressed,
     this.borderWidth = 0,
     this.vertical = 10.0,
     this.horizontal = 130.0,
@@ -17,6 +20,33 @@ class Button extends StatelessWidget {
   final double borderWidth;
   final double vertical;
   final double horizontal;
+  final VoidCallback onPressed;
+
+  factory Button.signup(BuildContext context) {
+    return Button(
+      text: "Sign Up",
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const CreateAccountPage()),
+        );
+      },
+    );
+  }
+  factory Button.login(BuildContext context) {
+    return Button(
+      backgroundColor: const Color(0xFFFFFFFF),
+      text: "Log In",
+      textColor: const Color(0xFF000000),
+      borderWidth: 1,
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const CreateAccountPage()),
+        );
+      },
+    );
+  }
 
   ButtonStyle getButtonStyle() {
     return ButtonStyle(
@@ -25,20 +55,20 @@ class Button extends StatelessWidget {
           EdgeInsets.symmetric(vertical: vertical, horizontal: horizontal),
         ),
         side: MaterialStateProperty.all<BorderSide>(
-            BorderSide(width: borderWidth, color: const Color(0xFFC8D9DE))));
+            BorderSide(width: borderWidth, color: const Color(0xFFC8D9DE))),
+        shadowColor: MaterialStateProperty.all<Color>(Colors.transparent),
+        elevation: MaterialStateProperty.all<double>(0));
   }
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: getButtonStyle(),
-      onPressed: () {},
-      child: Text(
+      onPressed: onPressed,
+      child: MyText(
         text,
-        style: TextStyle(
-          color: textColor,
-          fontSize: 19,
-        ),
+        color: textColor,
+        fontSize: 19,
       ),
     );
   }
@@ -52,8 +82,8 @@ class ButtonWithIcon extends StatelessWidget {
     this.borderWidth = 1,
     this.vertical = 10.0,
     this.horizontal = 100.0,
-     this.backgroundColor = const Color(0xFFFFFFFF),
-    this.textColor =const Color.fromARGB(255, 0, 0, 0),
+    this.backgroundColor = const Color(0xFFFFFFFF),
+    this.textColor = const Color.fromARGB(255, 0, 0, 0),
   });
 
   final Color backgroundColor;
@@ -71,7 +101,9 @@ class ButtonWithIcon extends StatelessWidget {
           EdgeInsets.symmetric(vertical: vertical, horizontal: horizontal),
         ),
         side: MaterialStateProperty.all<BorderSide>(
-            BorderSide(width: borderWidth, color: const Color(0xFFC8D9DE))));
+            BorderSide(width: borderWidth, color: const Color(0xFFC8D9DE))),
+        shadowColor: MaterialStateProperty.all<Color>(Colors.transparent),
+        elevation: MaterialStateProperty.all<double>(0));
   }
 
   @override
@@ -80,12 +112,10 @@ class ButtonWithIcon extends StatelessWidget {
       style: getButtonStyle(),
       onPressed: () {},
       icon: icon,
-      label: Text(
+      label: MyText(
         text,
-        style: TextStyle(
-          color: textColor,
-          fontSize: 13,
-        ),
+        color: textColor,
+        fontSize: 13,
       ),
     );
   }

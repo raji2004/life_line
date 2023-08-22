@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:life_line/widget/widget.dart';
 
 class OnboardingSwipe extends StatelessWidget {
   const OnboardingSwipe({
@@ -29,12 +30,13 @@ class OnboardingSwipe extends StatelessWidget {
             height: 10,
           ),
           Padding(
-            padding: const EdgeInsets.only(left:25.0),
+            padding: const EdgeInsets.only(left: 25.0),
             child: Align(
               alignment: Alignment.centerLeft,
-              child: Text(
+              child: MyText(
                 text1,
-                style: style,
+                fontWeight: FontWeight.w700,
+                fontSize: 24,
               ),
             ),
           ),
@@ -43,27 +45,25 @@ class OnboardingSwipe extends StatelessWidget {
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 25),
-            child: Text(
+            child: MyText(
               text2,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w400,
-              ),
+              fontSize: 18,
+              fontWeight: FontWeight.w400,
             ),
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 5),
           SpaceBetween(
             left: TextButton(
                 onPressed: onSkipPressed,
-                child: const Text(
+                child: const MyText(
                   "Skip",
-                  style: TextStyle(color: Color(0xff2F3132)),
+                  color: Color(0xff2F3132),
                 )),
             right: TextButton(
                 onPressed: onNextPressed,
-                child: const Text(
+                child: const MyText(
                   "Next",
-                  style: TextStyle(color: Color(0xffB00005)),
+                  color: Color(0xffB00005),
                 )),
           )
         ]);

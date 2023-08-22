@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:life_line/screens/screens.dart';
+import 'package:life_line/widget/widget.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class MySplashPage extends StatefulWidget {
@@ -44,19 +45,21 @@ class _MySplashPageState extends State<MySplashPage> {
                   height: 600,
                 ),
                 Image.asset('assets/Vector.png'),
-                Column(
+                const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(right: 50),
-                      child: Text(
+                      padding: EdgeInsets.only(right: 50),
+                      child: MyText(
                         'LifeLine',
-                        style: textStyle,
+                        color: Color(0xFF0F4775),
+                        fontWeight: FontWeight.w700,
+                        fontSize: 32,
                       ),
                     ),
-                    const Text(
+                    MyText(
                       'The gift of life in every drop',
-                      style: TextStyle(color: Color(0xff0F4775)),
+                      color: Color(0xff0F4775),
                     ),
                   ],
                 ),
