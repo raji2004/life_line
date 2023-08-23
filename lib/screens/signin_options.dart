@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:life_line/widget/widget.dart';
+import 'package:life_line/utils/utils.dart';
+
 
 class SigninOption extends StatelessWidget {
   const SigninOption({super.key});
@@ -7,7 +9,7 @@ class SigninOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color(0xffF4E5E5),
+      backgroundColor: AppColors.backgroundColor,
       body: LowerCard(
         child: BottomContent(),
       ),

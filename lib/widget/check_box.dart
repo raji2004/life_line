@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:life_line/widget/widget.dart';
+import 'package:life_line/utils/utils.dart';
 
 class CheckBox extends StatefulWidget {
   const CheckBox(
@@ -20,6 +21,7 @@ class _CheckBoxState extends State<CheckBox> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Checkbox(
+          checkColor: AppColors.red,
             value: isChecked,
             onChanged: (value) {
               setState(() {

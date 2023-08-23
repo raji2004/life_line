@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:life_line/utils/utils.dart';
 class InputBox extends StatefulWidget {
   const InputBox({
     super.key,
@@ -22,7 +22,7 @@ class InputBox extends StatefulWidget {
 }
 
 class _InputBoxState extends State<InputBox> {
-  var passwordVisibility = false;
+  var passwordVisibility = true;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -48,14 +48,14 @@ class _InputBoxState extends State<InputBox> {
             enabledBorder: OutlineInputBorder(
               borderSide: const BorderSide(
                 width: 1,
-                color: Color(0XFFC8D9DE),
+                color: AppColors.offWhite,
               ),
               borderRadius: BorderRadius.circular(widget.borderRadius),
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(
                 width: 1,
-                color: Color(0XFFC8D9DE),
+                color: AppColors.textColor,
               ),
               borderRadius: BorderRadius.circular(widget.borderRadius),
             ),

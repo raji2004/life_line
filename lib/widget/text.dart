@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:life_line/utils/utils.dart';
 
 class MyText extends StatelessWidget {
-  const MyText(this.text,
-      {super.key,
-      this.fontWeight = FontWeight.normal,
-      this.fontSize = 18,
-      this.color = Colors.black,
-      this.fontFamily = "Satoshi"});
+  const MyText(
+    this.text, {
+    super.key,
+    this.fontWeight = FontWeight.normal,
+    this.fontSize = 18,
+    this.color = AppColors.textColor,
+    this.fontFamily = "Satoshi",
+  });
   final String text;
   final FontWeight fontWeight;
   final double fontSize;

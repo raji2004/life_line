@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:life_line/widget/widget.dart';
+import 'package:life_line/utils/utils.dart';
+
 
 class LowerCard extends StatelessWidget {
   const LowerCard({
@@ -19,7 +21,7 @@ class LowerCard extends StatelessWidget {
         child: Container(
           height: screen.height / 2,
           width: screen.width,
-          color: const Color(0xFFFFFFFF),
+          color:  AppColors.offWhite,
           child: child,
         ),
       ),

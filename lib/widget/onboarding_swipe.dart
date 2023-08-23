@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:life_line/widget/widget.dart';
+import 'package:life_line/utils/utils.dart';
+
 
 class OnboardingSwipe extends StatelessWidget {
   const OnboardingSwipe({
@@ -57,13 +59,13 @@ class OnboardingSwipe extends StatelessWidget {
                 onPressed: onSkipPressed,
                 child: const MyText(
                   "Skip",
-                  color: Color(0xff2F3132),
+                  color: AppColors.red,
                 )),
             right: TextButton(
                 onPressed: onNextPressed,
                 child: const MyText(
                   "Next",
-                  color: Color(0xffB00005),
+                  color: AppColors.textColor,
                 )),
           )
         ]);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:life_line/screens/verification.dart';
 import 'package:life_line/widget/widget.dart';
 
 class CreateAccountPage extends StatelessWidget {
@@ -32,7 +33,7 @@ class CreateAccountPage extends StatelessWidget {
               const SizedBox(height: 20),
               const CheckBox("I’m at least 18 years old and agree to\nthe Terms of Use and Privacy Policy"),
               const SizedBox(height: 40),
-              Button(text: "Continue", onPressed: () {})
+              Button(text: "Continue", onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=> const VerificationPage())))
             ],
           ),
         ),
