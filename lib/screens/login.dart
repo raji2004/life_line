@@ -32,8 +32,9 @@ class LoginPage extends StatelessWidget {
               placeHolder: "Password",
               isPassword: true,
             ),
+            const SizedBox(height: 10),
             const SpaceBetween(
-              width: 350,
+              width: 330,
               left: CheckBox("Remember me"),
               right: MyText("Forgot Password"),
             ),

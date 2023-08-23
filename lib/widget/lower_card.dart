@@ -21,7 +21,7 @@ class LowerCard extends StatelessWidget {
         child: Container(
           height: screen.height / 2,
           width: screen.width,
-          color:  AppColors.offWhite,
+          color:  AppColors.white,
           child: child,
         ),
       ),
