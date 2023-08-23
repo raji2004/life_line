@@ -44,21 +44,21 @@ class BottomContent extends StatelessWidget {
         Button.login(context),
         const LineWithText(),
         ButtonWithIcon(
-          icon: Image.asset('assets/apple.png'),
+          icon: Image.asset('assets/icons/apple.png'),
           text: "Continue with Apple",
         ),
         const SizedBox(height: 10),
         ButtonWithIcon(
           icon: Padding(
             padding: const EdgeInsets.only(left: 3),
-            child: Image.asset('assets/google.png')),
+            child: Image.asset('assets/icons/google.png')),
           text: "Continue with Google",
         ),
         const SizedBox(height: 10),
         ButtonWithIcon(
           icon: Padding(
             padding: const EdgeInsets.only(left: 20.0),
-            child: Image.asset('assets/facebook.png'),
+            child: Image.asset('assets/icons/facebook.png'),
           ),
           text: "Continue with Facebook",
           horizontal: 82,

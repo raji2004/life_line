@@ -10,20 +10,20 @@ class OnboardingPage extends StatelessWidget {
     {
       "image": ClipRRect(
         borderRadius: BorderRadius.circular(50),
-        child: Image.asset('assets/doc1.png'),
+        child: Image.asset('assets/pics/doc1.png'),
       ),
       "text1": 'Donate Blood, Save Lives',
       "text2":
           'Welcome to our blood donation app, where you have the power to save lives with other community of donors'
     },
     {
-      "image": Image.asset("assets/doc2.png"),
+      "image": Image.asset("assets/pics/doc2.png"),
       "text1": "Safe and Simple",
       'text2':
           'We follow strict medical guidelines to ensure your safety and making it easy for you to make a life-saving donation'
     },
     {
-      "image": Image.asset("assets/doc3.png"),
+      "image": Image.asset("assets/pics/doc3.png"),
       "text1": "Become Someone’s LIfeline",
       'text2':
           'Your selfless act has the potential to extend and improve the lives of those in dire need of your help.'

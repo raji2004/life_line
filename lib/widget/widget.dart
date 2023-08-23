@@ -5,3 +5,4 @@ export 'package:life_line/widget/rectangle.dart';
 export 'package:life_line/widget/my_app_bar.dart';
 export 'package:life_line/widget/text.dart';
 export 'package:life_line/widget/input_box.dart';
+export 'package:life_line/widget/check_box.dart';

@@ -44,7 +44,7 @@ class _MySplashPageState extends State<MySplashPage> {
                 const SizedBox(
                   height: 600,
                 ),
-                Image.asset('assets/Vector.png'),
+                Image.asset('assets/icons/Vector.png'),
                 const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -55,6 +55,7 @@ class _MySplashPageState extends State<MySplashPage> {
                         color: Color(0xFF0F4775),
                         fontWeight: FontWeight.w700,
                         fontSize: 32,
+                        fontFamily: "Zodiak",
                       ),
                     ),
                     MyText(

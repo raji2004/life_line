@@ -71,20 +71,24 @@ class OnboardingSwipe extends StatelessWidget {
 }
 
 class SpaceBetween extends StatelessWidget {
-  const SpaceBetween({
-    super.key,
-    required this.left,
-    required this.right,
-  });
+  const SpaceBetween(
+      {super.key,
+      required this.left,
+      required this.right,
+      this.width = double.infinity});
 
   final Widget left;
   final Widget right;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [left, right],
+    return SizedBox(
+      width: width,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [left, right],
+      ),
     );
   }
 }

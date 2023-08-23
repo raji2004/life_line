@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({
     super.key,
-    this.image = const AssetImage('assets/bg.png'),
+    this.image = const AssetImage('assets/background/bg.png'),
     this.scaleY = 1.9,
     this.paddingBottom=30,
     this.paddingRight=0

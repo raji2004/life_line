@@ -18,8 +18,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         useMaterial3: true,
+        fontFamily: "Zodiak"
       ),
-      home: const SigninOption(),
+      home: const MySplashPage(),
       debugShowCheckedModeBanner: false,
     );
   }
