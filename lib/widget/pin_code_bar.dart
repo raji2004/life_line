@@ -10,8 +10,8 @@ class PinCodeBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 78.0),
+    return SizedBox(
+      width: 225,
       child: PinCodeTextField(
           appContext: context,
           length: 4, // Set the length of the PIN code

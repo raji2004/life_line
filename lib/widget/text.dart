@@ -29,3 +29,29 @@ class MyText extends StatelessWidget {
     );
   }
 }
+
+class MyRichText extends StatelessWidget {
+  const MyRichText({
+    super.key,
+    required this.boldText,
+    this.text =
+        "Please enter the verification code sent to your\n email address: ",
+  });
+  final String boldText;
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        style: DefaultTextStyle.of(context).style,
+        children: <TextSpan>[
+           TextSpan(text: text),
+          TextSpan(
+            text: boldText,
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+    );
+  }
+}

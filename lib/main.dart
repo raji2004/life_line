@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:life_line/screens/screens.dart';
+import 'package:life_line/screens/verification.dart';
 
 
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: "Satoshi"
       ),
-      home: const MySplashPage(),
+      home: const VerificationPage(),
       debugShowCheckedModeBanner: false,
     );
   }
