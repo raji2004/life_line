@@ -74,10 +74,10 @@ flutter:
           weight: 700
 
   assets:
-       - assets/icons/Vector.png
        - assets/pics/doc1.png
        - assets/pics/doc2.png
        - assets/pics/doc3.png
+       - assets/icons/Vector.png
        - assets/icons/google.png
        - assets/icons/facebook.png
        - assets/icons/apple.png
